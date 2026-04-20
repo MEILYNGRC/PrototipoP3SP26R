@@ -1,1 +1,0 @@
-INSERT INTO aplicaciones (Aplcodigo, Aplnombre, Aplestado) VALUES (10011, "asignacionaplicacionperfil", 1)
