@@ -69,7 +69,8 @@ public class MdiSeguridad extends javax.swing.JFrame {
         frmMantenimientoBitacora = new javax.swing.JMenuItem();
         mnuReportes = new javax.swing.JMenu();
         mnuAyudas = new javax.swing.JMenu();
-        peliculas = new javax.swing.JMenu();
+        mnupeliculas = new javax.swing.JMenu();
+        frmPeliculas = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -215,13 +216,22 @@ public class MdiSeguridad extends javax.swing.JFrame {
         mnuAyudas.setText("Ayudas");
         mnuGeneral.add(mnuAyudas);
 
-        peliculas.setText("Peliculas");
-        peliculas.addActionListener(new java.awt.event.ActionListener() {
+        mnupeliculas.setText("Peliculas");
+        mnupeliculas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                peliculasActionPerformed(evt);
+                mnupeliculasActionPerformed(evt);
             }
         });
-        mnuGeneral.add(peliculas);
+
+        frmPeliculas.setText("Peliculas");
+        frmPeliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frmPeliculasActionPerformed(evt);
+            }
+        });
+        mnupeliculas.add(frmPeliculas);
+
+        mnuGeneral.add(mnupeliculas);
 
         setJMenuBar(mnuGeneral);
 
@@ -255,6 +265,16 @@ public class MdiSeguridad extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }    
+    
+    
+     private void cerrarTodasLasVentanas() {
+    for (javax.swing.JInternalFrame frame : jDesktopPane1.getAllFrames()) {
+        frame.dispose(); // Cierra la ventana
+    }
+}
+    
+    
+    
     public void confirmarSalida() 
     {
         int valor=JOptionPane.showConfirmDialog(this,"¿Està seguro de cerrar?", "Advertencia", JOptionPane.YES_NO_OPTION);
@@ -298,6 +318,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void mantenimientoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoUsuariosActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a mantenimiento usuarios");
         frmMantenimientoUsuario ventana = new frmMantenimientoUsuario();
         jDesktopPane1.add(ventana);
@@ -308,6 +329,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmMantenimientoPerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmMantenimientoPerfilesActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a mantenimiento perfiles");
         frmMantenimientoPerfil ventana = new frmMantenimientoPerfil();
         jDesktopPane1.add(ventana);
@@ -322,6 +344,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmMantenimientoAplicacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmMantenimientoAplicacionesActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a mantenimiento Aplicaciones");
         frmMantenimientoAplicaciones ventana = new frmMantenimientoAplicaciones();
         jDesktopPane1.add(ventana);
@@ -332,6 +355,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmMantenimientoBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmMantenimientoBitacoraActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a mantenimiento Bitacora");
         frmMantenimientoBitacora ventana = new frmMantenimientoBitacora();
         jDesktopPane1.add(ventana);
@@ -342,6 +366,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmProcesoPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmProcesoPerfilUsuarioActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a proceso Asignacion Perfil Usuario");
         frmProcesoPerfilUsuario ventana = new frmProcesoPerfilUsuario();
         jDesktopPane1.add(ventana);
@@ -352,6 +377,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmProcesoAplicacionPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmProcesoAplicacionPerfilActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a proceso Aplicion a Perfil");
         frmProcesoAplicacionPerfil ventana = new frmProcesoAplicacionPerfil();
         jDesktopPane1.add(ventana);
@@ -362,6 +388,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void frmProcesoAplicacionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmProcesoAplicacionUsuarioActionPerformed
         // TODO add your handling code here:
+        cerrarTodasLasVentanas();
         System.out.println("entre a proceso Aplicacion a Usuario");
         frmProcesoAplicacionUsuario ventana = new frmProcesoAplicacionUsuario();
         jDesktopPane1.add(ventana);
@@ -370,15 +397,27 @@ public class MdiSeguridad extends javax.swing.JFrame {
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
-    private void peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peliculasActionPerformed
+    private void mnupeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnupeliculasActionPerformed
         // TODO add your handling code here:
-        System.out.println("entre a proceso Aplicacion a Usuario");
-        frmProcesoAplicacionUsuario ventana = new frmProcesoAplicacionUsuario();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-    }//GEN-LAST:event_peliculasActionPerformed
+        
+    }//GEN-LAST:event_mnupeliculasActionPerformed
+
+    private void frmPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmPeliculasActionPerformed
+        // TODO add your handling code here:
+         cerrarTodasLasVentanas();
+    System.out.println("entre a peliculas");
+
+    frmPeliculas ventana = new frmPeliculas(); // ✔ CORRECTO
+    jDesktopPane1.add(ventana);
+
+    ventana.setVisible(true); // ⚠ IMPORTANTE (te faltaba esto)
+
+    Dimension desktopSize = jDesktopPane1.getSize();
+    Dimension FrameSize = ventana.getSize();
+
+    ventana.setLocation((desktopSize.width - FrameSize.width) / 2,
+                        (desktopSize.height - FrameSize.height) / 2);
+    }//GEN-LAST:event_frmPeliculasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,6 +465,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
     private javax.swing.JMenuItem frmMantenimientoAplicaciones;
     private javax.swing.JMenuItem frmMantenimientoBitacora;
     private javax.swing.JMenuItem frmMantenimientoPerfiles;
+    private javax.swing.JMenuItem frmPeliculas;
     private javax.swing.JMenuItem frmProcesoAplicacionPerfil;
     private javax.swing.JMenuItem frmProcesoAplicacionUsuario;
     private javax.swing.JMenuItem frmProcesoPerfilUsuario;
@@ -445,6 +485,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
     private javax.swing.JMenu mnuProcesos;
     private javax.swing.JMenu mnuReportes;
     private javax.swing.JCheckBoxMenuItem mnuSalirSistema;
-    private javax.swing.JMenu peliculas;
+    private javax.swing.JMenu mnupeliculas;
     // End of variables declaration//GEN-END:variables
 }
