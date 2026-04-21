@@ -399,25 +399,20 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void mnupeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnupeliculasActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_mnupeliculasActionPerformed
+        System.out.println("entre a proceso PELICULAS");
 
-    private void frmPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmPeliculasActionPerformed
-        // TODO add your handling code here:
-         cerrarTodasLasVentanas();
-    System.out.println("entre a peliculas");
+        frmPeliculas ventana = new frmPeliculas(); //recordar
 
-    frmPeliculas ventana = new frmPeliculas(); // ✔ CORRECTO
-    jDesktopPane1.add(ventana);
+        jDesktopPane1.add(ventana);
+        ventana.setVisible(true);
 
-    ventana.setVisible(true); // ⚠ IMPORTANTE (te faltaba esto)
-
-    Dimension desktopSize = jDesktopPane1.getSize();
-    Dimension FrameSize = ventana.getSize();
-
-    ventana.setLocation((desktopSize.width - FrameSize.width) / 2,
-                        (desktopSize.height - FrameSize.height) / 2);
-    }//GEN-LAST:event_frmPeliculasActionPerformed
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation(
+                (desktopSize.width - FrameSize.width) / 2,
+                (desktopSize.height - FrameSize.height) / 2
+        );
+    }//GEN-LAST:event_peliculasActionPerformed
 
     /**
      * @param args the command line arguments
