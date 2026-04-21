@@ -69,6 +69,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
         frmMantenimientoBitacora = new javax.swing.JMenuItem();
         mnuReportes = new javax.swing.JMenu();
         mnuAyudas = new javax.swing.JMenu();
+        peliculas = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -87,11 +88,11 @@ public class MdiSeguridad extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 446, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
 
         mnuArchivo.setText("Archivo");
@@ -213,6 +214,14 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
         mnuAyudas.setText("Ayudas");
         mnuGeneral.add(mnuAyudas);
+
+        peliculas.setText("Peliculas");
+        peliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                peliculasActionPerformed(evt);
+            }
+        });
+        mnuGeneral.add(peliculas);
 
         setJMenuBar(mnuGeneral);
 
@@ -361,6 +370,16 @@ public class MdiSeguridad extends javax.swing.JFrame {
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
+    private void peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peliculasActionPerformed
+        // TODO add your handling code here:
+        System.out.println("entre a proceso Aplicacion a Usuario");
+        frmProcesoAplicacionUsuario ventana = new frmProcesoAplicacionUsuario();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }//GEN-LAST:event_peliculasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -426,5 +445,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
     private javax.swing.JMenu mnuProcesos;
     private javax.swing.JMenu mnuReportes;
     private javax.swing.JCheckBoxMenuItem mnuSalirSistema;
+    private javax.swing.JMenu peliculas;
     // End of variables declaration//GEN-END:variables
 }
