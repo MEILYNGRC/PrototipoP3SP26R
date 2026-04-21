@@ -157,13 +157,23 @@
             <Property name="text" type="java.lang.String" value="Ayudas"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="peliculas">
+        <Menu class="javax.swing.JMenu" name="mnupeliculas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Peliculas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="peliculasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnupeliculasActionPerformed"/>
           </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="frmPeliculas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Peliculas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frmPeliculasActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
