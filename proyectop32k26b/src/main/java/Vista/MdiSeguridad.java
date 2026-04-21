@@ -372,12 +372,19 @@ public class MdiSeguridad extends javax.swing.JFrame {
 
     private void peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peliculasActionPerformed
         // TODO add your handling code here:
-        System.out.println("entre a proceso Aplicacion a Usuario");
-        frmProcesoAplicacionUsuario ventana = new frmProcesoAplicacionUsuario();
+        System.out.println("entre a proceso PELICULAS");
+
+        frmPeliculas ventana = new frmPeliculas(); //recordar
+
         jDesktopPane1.add(ventana);
+        ventana.setVisible(true);
+
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        ventana.setLocation(
+                (desktopSize.width - FrameSize.width) / 2,
+                (desktopSize.height - FrameSize.height) / 2
+        );
     }//GEN-LAST:event_peliculasActionPerformed
 
     /**
