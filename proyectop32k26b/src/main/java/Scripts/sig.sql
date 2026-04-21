@@ -29,7 +29,15 @@ START TRANSACTION;
 --
 
 -- --------------------------------------------------------
-
+  CREATE TABLE Peliculas (
+    idPeliculas INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(45) NOT NULL,
+    Clasificacion VARCHAR(45),
+    Genero VARCHAR(45),
+    Subtitulado VARCHAR(45),
+    Idioma VARCHAR(45),
+    precio DOUBLE
+);
 --
 -- Estructura de tabla para la tabla `aplicaciones`
 --
