@@ -304,6 +304,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_mnuSalirSistemaActionPerformed
 
+    
     private void mnuConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuConsultasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuConsultasActionPerformed
@@ -397,23 +398,27 @@ public class MdiSeguridad extends javax.swing.JFrame {
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }//GEN-LAST:event_frmProcesoAplicacionUsuarioActionPerformed
 
-    private void mnupeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnupeliculasActionPerformed
+    private void mnupeliculasActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-        System.out.println("entre a proceso PELICULAS");
+        cerrarTodasLasVentanas();
+        System.out.println("entre a peliculas");
 
-        frmPeliculas ventana = new frmPeliculas(); //recordar
-
+        frmPeliculas ventana = new frmPeliculas();
         jDesktopPane1.add(ventana);
         ventana.setVisible(true);
 
         Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation(
-                (desktopSize.width - FrameSize.width) / 2,
-                (desktopSize.height - FrameSize.height) / 2
-        );
-    }//GEN-LAST:event_peliculasActionPerformed
+        Dimension frameSize = ventana.getSize();
 
+        ventana.setLocation(
+                (desktopSize.width - frameSize.width) / 2,
+                (desktopSize.height - frameSize.height) / 2
+        );
+    }                                         
+
+    private void frmPeliculasActionPerformed(java.awt.event.ActionEvent evt) {
+    mnupeliculasActionPerformed(evt);
+}
     /**
      * @param args the command line arguments
      */
